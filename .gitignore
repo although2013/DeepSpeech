@@ -1,2 +1,8 @@
 .DS_Store
 *.pyc
+*.tar.gz
+*.npz
+*.klm
+*.pdparams
+vocab.txt
+decoders/swig/

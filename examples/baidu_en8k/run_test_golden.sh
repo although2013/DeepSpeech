@@ -4,29 +4,28 @@ cd ../.. > /dev/null
 
 # download language model
 cd models/lm > /dev/null
-bash download_lm_en.sh
-if [ $? -ne 0 ]; then
-    exit 1
-fi
+#bash download_lm_en.sh
+#if [ $? -ne 0 ]; then
+#    exit 1
+#fi
 cd - > /dev/null
 
 
 # download well-trained model
 cd models/baidu_en8k > /dev/null
-bash download_model.sh
-if [ $? -ne 0 ]; then
-    exit 1
-fi
+#bash download_model.sh
+#if [ $? -ne 0 ]; then
+#    exit 1
+#fi
 cd - > /dev/null
 
 
 # evaluate model
-CUDA_VISIBLE_DEVICES=0,1,2,3 \
-python -u test.py \
+#CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python -u test1.py \
 --batch_size=128 \
 --beam_size=500 \
 --num_proc_bsearch=8 \
---num_proc_data=8 \
 --num_conv_layers=2 \
 --num_rnn_layers=3 \
 --rnn_layer_size=1024 \
